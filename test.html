@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+     <head>
+        <meta charset="utf-8">
+        <title>代码测试</title>
+        
+        <script>
+            function myfunction(){
+				   //第一种方法
+				   var temp=document.getElementById("txt2").value;   //注意引号内的内容应该是文本框的id而不能是name
+				   //第二种方法
+				   var temp=document.form1.txt1.value;   //这里第一个“.”后面必须是form标签的name而不能是id；而第二个“.”后id和name均可。
+				   alert(temp);
+				}
+        </script>
+     </head>
+ 
+     <body>
+        <form name="form1" id="form2"  method="post">
+           <input type="text" name="txt1" id="txt2">
+           <input type="button" value="点击提交" onclick="myfunction()">
+        </form>
+     </body>
+</html>

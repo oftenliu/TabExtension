@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Bento</title>
+		<link rel=" shortcut icon" type="image/png" href="assets/icons/favicon.png" />
+		<link rel="stylesheet" href="app.css" />
+        <script src="package/lucide.min.js"></script>
+		<link rel="stylesheet" href="package/bootstrap.min.css">
+		<script src="package/jquery.min.js"></script>
+		<script src="package/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="package/style.css">
+
+	</head>
+	<nav id="Often_Bar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Tab</a>
+		</div>
+		<div>
+			<ul id="Often_Tab" class="nav navbar-nav">
+				<li class="active"><a href="#home" data-toggle="tab">看板</a></li>
+				<li><a href="#danmu" data-toggle="tab">弹幕</a></li>
+				<li class="dropdown">
+					<a href="#tool" id="TabDrop_Tool" class="dropdown-toggle" data-toggle="dropdown">
+						工具
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+						<li><a href="#jmeter" tabindex="-1" data-toggle="tab">深度学习</a></li>
+						<li><a href="#ejb" tabindex="-1" data-toggle="tab">因果推断</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</nav>
+	<body class="">
+		<div id="Often_TabContent" class="tab-content">
+			<div class="tab-pane fade in active" id="home">
+				<button id="themeButton">
+					<i id="themeIcon" icon-name="moon"></i>
+				</button>
+				<div class="container">
+					<!-- Clock and Greetings  -->
+		
+					<div class="timeBlock">
+						<div class="clock">
+							<div id="hour"></div>
+							<div id="separator"></div>
+							<div id="minutes"></div>
+						</div>
+						<div id="greetings"></div>
+					</div>
+		
+					<!-- Date and Weather  -->
+		
+					<div class="weatherBlock">
+						<div class="date">
+							<div id="month"></div>
+							<div id="day"></div>
+						</div>
+						<div class="weather">
+							<div class="weatherIcon">
+								<img src="assets/icons/OneDark/unknown.png" />
+							</div>
+							<div class="weatherCity">
+								<p></p>
+							</div>                    
+							<div class="weatherValue">
+								<p>- °<span class="g">c</span></p>
+							</div>
+							<div class="weatherDescription">
+								<p></p>
+							</div>
+						</div>
+					</div>
+		
+					<div class="linksBlock" id="linksBlock">
+						<div class="linksBlockLeft" id="linksBlockLeft"></div>
+						<div class="linksBlockRight" id="linksBlockRight"></div>
+					</div>
+				</div>
+		
+				<!-- Config  -->
+				<script src="config.js"></script>
+		
+				<!-- Scripts  -->
+				<script src="assets/js/layout.js"></script>
+				<script src="assets/js/theme.js"></script>
+				<script src="assets/js/time.js"></script>
+				<script src="assets/js/greeting.js"></script>
+				<script src="assets/js/weather.js"></script>
+				
+				<!-- Generators  -->
+				<script src="assets/js/buttons.js"></script>
+				<script src="assets/js/lists.js"></script>			
+			</div>
+			<div class="tab-pane fade" id="danmu">
+				<form class="video_bs video_bs-form" role="form">
+					<div class="row">
+						<div class="col-lg-6">
+							<div id="tencent_input" class="input-group">
+								<input type="text" id="tencent_url_txt" class="form-control">
+								<span class="input-group-btn">
+									<button id="tencent_danmu_btn" class="btn btn-default" type="button">
+										<a href="#tencent_page" data-toggle="tab">腾讯视频</a>
+									</button>
+								</span>
+							</div><!-- /input-group -->
+						</div>
+						<div class="col-lg-6">
+							<div id="bilibili_input" class="input-group">
+								<input type="text" id="bilibili_roomid_txt" class="form-control">
+								<span class="input-group-btn">
+									<button id="bilibili_danmu_btn"  class="btn btn-default" type="button">
+                                        <a href="#bilibili_page" data-toggle="tab">bilibili房间号</a>
+                                    </button>
+								</span>
+							</div><!-- /input-group -->
+						</div>
+					</div><!-- /.row -->
+				</form>
+				<script src="assets/js/danmu.js"></script>	
+                <script src="package/echarts.min.js" charset="utf-8"></script>
+				
+			</div>
+			<div class="tab-pane fade" id="jmeter">
+				<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+			</div>
+			<div class="tab-pane fade" id="ejb">
+				<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+				</p>
+			</div>
+			<div class="tab-pane fade" id="tencent_page">
+				<p>页面晨在</p>
+            </div>
+			<div class="tab-pane fade" id="bilibili_page">
+				<div class="wpbox">
+                    <div class="bnt">
+                      <input  type="hidden"  id="roomid"  value="{{roomid}}">
+                      <div class="topbnt_left fl">
+                       <ul><!-- <li class="active">< href="#">警情警力</a></li>
+                          <li><a href="#">实有人口</a></li>
+                          <li><a href="#">流动人口</a></li>
+                          <li><a href="#">实名制</a></li> -->
+                       </ul>
+                      </div>
+                      <h1 class="tith1 fl">B站直播实时弹幕分析</h1>
+                      <div class=" fr topbnt_right">
+                        <ul>
+                          <!--  <li><a href="#">返回</a></li>
+                           <li><a href="#">分析报告</a></li>
+                           <li><a href="#">交通</a></li>
+                           <li><a href="#">舆情</a></li> -->
+                        </ul>
+                       </ul>
+                      </div>
+                    </div>
+                    <!-- bnt end -->
+                    <div class="left1">
+                        <div class="aleftboxttop"><h2 class="tith2"  id="uid"></h2>
+                        <div class="lefttoday_tit" style=" height:8%"><p class="fl">房间号：{{roomid}}</p><p class="fr" id="d51"></p></div>
+                        <div class="lefttoday_number">
+                          <div class="widget-inline-box text-center fl">
+                            <p>粉丝数</p>
+                            <h3 class="ceeb1fd"  id="d52"></h3>
+                            <!-- <h4 class="text-muted pt6">环比<img src="img/iconup.png" height="16" />2%</h4> -->
+                          </div>
+                          <div class="widget-inline-box text-center fl">
+                             <p>关注数</p>
+                            <h3 class="c24c9ff"  id="d53"></h3>
+                            <!-- <h4 class="text-muted pt6">环比<img src="img/iconup.png" height="16" />3%</h4> -->
+                          </div>
+                          <div class="widget-inline-box text-center fl">
+                             <p>当前评论数</p>
+                            <h3 class="cffff00"  id="d54"></h3>
+                            <!-- <h4 class="text-muted pt6">环比<img src="img/iconup.png" height="16" />3%</h4> -->
+                          </div>
+                          <!-- <div class="widget-inline-box text-center fl">
+                             <p>处理中</p>
+                            <h3 class="c11e2dd">4</h3>
+                            <h4 class="text-muted pt6">环比<img src="img/icondown.png" height="16" />3%</h4>
+                          </div> -->
+                        </div>
+                        <!-- lefttoday_number end -->
+                        </div>
+                        <div class="aleftboxtmidd">
+                          <h2 class="tith2">关键字抽取</h2>
+                              <div class="lefttoday_tit height ht"><p class="fl">状态：已刷新</p><p class="fr"  id="d4"></p></div>
+                          <div id="aleftboxtmidd" class="aleftboxtmiddcont"></div>
+                      </div>
+                      <div class="aleftboxtbott">
+                        <!-- <h2 class="tith2">矛盾纠纷类型统计</h2>
+                            <div class="lefttoday_tit height"><p class="fl">状态：已刷新</p><p class="fr">时间段：2018-06-10 至 2018-06-14</p></div>
+                        <div id="aleftboxtbott" class="aleftboxtbott_cont" ></div> -->
+                        <h2 class="tith2">高频词统计分析</h2>
+                          <!-- <div id="pleftbox2midd" class="pleftbox2middcont"></div> -->
+                          <div class="pvr fl  lpeftb2otcont1 hdtop" style=" height:82%;" >
+    
+                            <div id="pleftbox2bott_cont" class="pleftbox2middcont" style=" height:100%;" >
+                            
+                            </div>
+                          </div>
+                    
+                      </div>
+                    
+                    
+                    </div>
+                    <!--  left1 end -->
+                    <div class="mrbox">
+                          <div class="mrbox_topmidd" style="width: 69%;">
+                              <div class="amiddboxttop">
+                                  <h2 class="tith2 pt1">实时弹幕词云统计</h2>
+                                  <div class="amiddboxttop_map" id="findId" ></div>
+                                </div>
+                                <!--  amiddboxttop end-->
+                                    <div class="amidd_bott">
+                                      <div class="amiddboxtbott1 fl" >
+                                        <!-- <h2 class="tith2 pt1">矛盾纠纷环比分析</h2>
+                                        <div id="amiddboxtbott1" class="amiddboxtbott1content" ></div> -->
+                                        <h2 class="tith2">情感判断分析</h2>
+                                            <div class="lefttoday_tit height"><p class="fl">状态：已刷新</p><p class="fr"  id="d2"></p></div>
+                                        <div id="aleftboxtbott" class="aleftboxtbott_cont" ></div>
+                                      </div>
+                    
+                                    <div class="amiddboxtbott2 fl">
+                                         <h2 class="tith2 ">不同时间点评论数分析</h2>
+                                  <div class="lefttoday_tit"><p class="fl">状态：已刷新</p><p class="fr" id="d1"></p></div>
+                                  <div id="arightboxbott" class="arightboxbottcont" style=""></div>
+                                    </div>
+                                </div>
+                                <!-- amidd_bott end -->
+                              </div>
+                            <!-- mrbox_top end -->
+                            <div class="mrbox_top_right">
+                              <div class="arightboxtop"><h2 class="tith2">弹幕列表</h2>
+                                <div class="lefttoday_tit" >
+                                     <p class="fl">状态：已刷新</p><p class="fr"  id="listDateId"></p></div>
+                                     <div class="left2_table"  id="listId">
+                                     </div>
+                              </div>
+                               
+                            </div>
+                            <!-- mrbox_top_right end -->
+                          </div>
+                    
+                        </div>
+                    </div> 
+            </div>
+        </div>
+	</body>
+
+	<!-- Developed and designed by Miguel Ávila: -->
+	<!-- https://avila.sh-->
+</html>
+

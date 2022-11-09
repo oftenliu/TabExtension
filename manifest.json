@@ -1,0 +1,30 @@
+{
+    "name": "Tabkanban",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "You can customize the components in the new tab page of the browser .",
+    "permissions": ["activeTab"],
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' ; object-src 'self'"
+      },
+      "web_accessible_resources": [
+        {
+          "resources": [ "test1.png", "test2.png" ],
+          "matches": [ "chrome-extension://kgdmdabcfhbnkgmihbmhkhkdcpoplkin/*" ],
+          "use_dynamic_url": true
+        }, {
+          "resources": [ "test3.png", "test4.png" ],
+          "matches": [ "chrome-extension://kgdmdabcfhbnkgmihbmhkhkdcpoplkin/*" ],
+          "use_dynamic_url": true
+        }
+      ],
+    "icons": {
+        "128": "icon.png"
+    }
+}
+
+
+
