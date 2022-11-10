@@ -42,7 +42,7 @@ function find(){
             if (data['picpath'].length>5){
             //var findId=document.getElementById("findId");
             ///findId.style.background="url(../"+data['picpath']+") ";
-            $(".amiddboxttop_map").css("background-image","url(../static/roomidimg/"+data['picpath']+")");
+            $(".amiddboxttop_map").css("background-image","url(http://127.0.0.1/static/roomidimg/"+data['picpath']+")");
             }
             
         }
